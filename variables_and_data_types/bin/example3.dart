@@ -19,12 +19,41 @@ void main(List<String> args) {
   dogName = "Bruno";
 
   // To access a property or attribute of of Optional type
-  print(dogName?.length);
+  // print(dogName?.length);
   // Null aware, means the dev is consicous of his choice of accessing
   // propery of variable whose value can be null and can cause problems..
   print(phNumber?.isEven); // null
 
   String? bookOne = 'Art of war';
   String helen = "Hellco";
-  var otherBook = bookOne ?? null;
+  // var otherBook = bookOne ?? null;
+
+  var drink = null;
+  // if you assign null to a const, var or final then the type is dynamic
+  // As it can be anything - optional int, optional double etc.
+  // null aware operator ??
+  drink ??= 'Hey';
+  print(drink);
+  // Expands to drink = drink ?? 'Hey'
+
+  // Optionals inside containers
+  List<String>? myListOne; // means this list can be null value
+  // but it cannot contain null strs. myListOne = [null, 'Hey'] **INVALID**
+  print(myListOne);
+
+  List<String?> myListTwo = []; // this list can contain null value or strings
+  // but itself cannot be null Examples myListTwo = null        ** INVALID **
+  myListTwo.add(null);
+  myListTwo.add('Good morining!!');
+  print(myListTwo);
+
+  List<String?>? myList3;
+  // myList3 CAN be null + it can contain null values or strings
+  print('myList3 contains $myList3');
+  myList3 = [];
+  myList3.add('Hey There!');
+  myList3.add(null);
+  print(myList3);
+
+  
 }
