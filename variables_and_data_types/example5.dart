@@ -1,6 +1,10 @@
 // Control Flow
 // ignore_for_file: unused_local_variable
 
+
+//*Todo: read input and write output on the cmd line
+// using dart.io library
+// switch statements and labels
 void main(List<String> args) {
   // Else if statements
 
@@ -25,4 +29,38 @@ void main(List<String> args) {
     print("You will not reach here..");
   else
     print("If none of the above runs, You will see me");
+
+  // LOops in Action
+  print('Name of songs');
+  var songs = [
+    "Hakum",
+    "Ae dil he mushkil",
+    "Channa mereya",
+    "Fanaa",
+    "Rabtaa",
+    "Seesha"
+  ];
+  // forwards inc by 1
+  for (int i = 0; i < songs.length; i++) {
+    print(songs[i]);
+  }
+  // backwards dec by 1
+  for (int i = songs.length - 1; i >= 0; i--) {
+    print(songs[i]);
+  }
+  print("Backwards and dec by 2");
+  // backwards dec by 2
+  for (int i = songs.length - 1; i >= 0; i -= 2) {
+    print(songs[i]);
+  }
+  print("-----------");
+  // Modern war
+  songs.forEach((element) {
+    print(element);
+  });
+  print("_______");
+  for (final song in songs) {
+    print(song);
+  }
+  // remember can't use const inside the for in method
 }
